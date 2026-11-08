@@ -1,7 +1,6 @@
 # Die 100 Gefangenen und die Kästen – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-gefangene-kaesten-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-gefangene-kaesten-demo.streamlit.app/)**
 
 Erstes Stück der Reihe **„Teamrätsel“** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Ein Team hat **ein gemeinsames Ziel**, darf **vorher eine Strategie absprechen** und handelt dann **ohne Verständigung**. Das Rätsel hier ist ein **Lehrbuchresultat** (bekannt); die Demo rechnet es exakt nach, zeigt die Zyklen, vergleicht drei Strategien und fragt, was ein Wärter und was ein Helfer ändern. Es ist eine **Rechenaufgabe mit idealisierten Annahmen, keine Aussage über Menschen.**
 

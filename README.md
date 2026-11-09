@@ -2,7 +2,7 @@
 
 **[→ Demo live ausprobieren](https://sebastianhanisch-gefangene-kaesten-demo.streamlit.app/)**
 
-Erstes Stück der Reihe **„Teamrätsel“** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Ein Team hat **ein gemeinsames Ziel**, darf **vorher eine Strategie absprechen** und handelt dann **ohne Verständigung**. Das Rätsel hier ist ein **Lehrbuchresultat** (bekannt); die Demo rechnet es exakt nach, zeigt die Zyklen, vergleicht drei Strategien und fragt, was ein Wärter und was ein Helfer ändern. Es ist eine **Rechenaufgabe mit idealisierten Annahmen, keine Aussage über Menschen.**
+Eine Demo zu Teamrätseln, für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Ein Team hat **ein gemeinsames Ziel**, darf **vorher eine Strategie absprechen** und handelt dann **ohne Verständigung**. Das Rätsel hier ist ein **Lehrbuchresultat** (bekannt); die Demo rechnet es exakt nach, zeigt die Zyklen, vergleicht drei Strategien und fragt, was ein Wärter und was ein Helfer ändern. Es ist eine **Rechenaufgabe mit idealisierten Annahmen, keine Aussage über Menschen.**
 
 ## Warum dieses Problem
 
@@ -30,7 +30,7 @@ Die Demo ordnet das ein: Wie viele Kästen braucht das Team (E1), hängt der Wer
 
 ## Befunde (gemessen, keine Behauptungen)
 
-Alle Zahlen sind eigene Rechnung unter den genannten Voraussetzungen (gleichverteilte Anordnung, Strategie vorab fest, alle dasselbe *m*), jede in `tests/test_claims.py` nachgerechnet.
+Alle Zahlen sind eigene Rechnung unter den genannten Voraussetzungen (gleichverteilte Anordnung, Strategie vorab fest, alle dasselbe *m*), jede in den Tests nachgerechnet (`tests/test_claims.py`, in einzelnen Zeilen die Orakel- und Eigenschaftstests, dort vermerkt).
 
 | Frage | Befund |
 |---|---|
@@ -38,10 +38,10 @@ Alle Zahlen sind eigene Rechnung unter den genannten Voraussetzungen (gleichvert
 | Einzelchance allgemein | Anteil der erfolgreichen Gefangenen ist *m*/*n*: durch Aufzählung aller 5.040 Anordnungen für *n* = 7 und jedes *m* bestätigt (`test_claim_individual_chance_…`) |
 | Wie die Erfolge gekoppelt sind | *n* = 8, *m* = 4, Aufzählung aller 40.320 Anordnungen: entweder alle haben Erfolg (307/840, das sind 14.736 der 40.320) oder genau *L* Gefangene scheitern, mit Wahrscheinlichkeit 1/*L* für *L* = 5, 6, 7, 8 (1/5, 1/6, 1/7, 1/8) (`test_claim_cycle_strategy_failures_…`) |
 | Grenzwert | Mit *m* = *n*/2 sinkt die Gewinnchance von 50,0 % (*n* = 2) auf 31,2 % (*n* = 100) und bleibt für alle geraden *n* bis 200 über 1 − ln 2 = 30,7 %; bei *n* = 100 liegt sie 0,50 Prozentpunkte darüber (`test_claim_limit_…`, `test_claim_the_value_at_m_equals_n_over_2_…`). *n* = 8: 307/840 = 36,5 %, *n* = 10: 35,4 % (`test_claim_small_cases_…`) |
-| Weniger oder mehr Kästen, *n* = 100 | *m* = 10: 1,3·10⁻¹⁰, 25: 0,57 %, 40: 13,5 %, 49: 29,2 %, 51: 33,1 %, 60: 49,2 % (`test_claim_n100_other_box_counts`); mit *m* = 1 gewinnt nur die Identität (1/100!). Die Kurve steigt in *m* streng, getestet für *n* = 6, 11 und 30 |
+| Weniger oder mehr Kästen, *n* = 100 | *m* = 10: 1,3·10⁻¹⁰, 25: 0,57 %, 40: 13,5 %, 49: 29,2 %, 51: 33,1 %, 60: 49,2 % (`test_claim_n100_other_box_counts`); mit *m* = 1 gewinnt nur die Identität (1/100!). Die Kurve steigt in *m* streng, getestet für *n* = 6, 11 und 30 (`tests/test_eigenschaften_gefangene_kaesten.py`) |
 | Feste Kästen (Fenster *i* bis *i* + *m* − 1) | *m* = *n*/2: *n* = 8: 11/1680 = 0,65 % gegen 0,39 % bei Zufall (Faktor 1,7); *n* = 4: Faktor 1,3; *n* = 20: 1,7·10⁻⁶ gegen 9,5·10⁻⁷ bei Zufall (Faktor 1,8, 4.152.609.019.392 passende Anordnungen); über *n* = 20 nicht exakt gerechnet (`test_claim_fixed_windows_…`) |
 | Der Wärter kennt die Strategie | Ohne Helfer scheitert das Team gegen die Zyklus-Strategie und gegen feste Kästen für *m* < *n* sicher (0 %); die Zufalls-Strategie ist unberührt (7,9·10⁻³¹ bei *n* = 100) (`test_claim_warden_…`) |
-| Geheime Umnummerierung der Kästen | Der Mittelwert über alle Umnummerierungen ist gleich der Gewinnchance einer zufälligen Anordnung, weil *q∘ρ* für gleichverteiltes ρ gleichverteilt ist (Begründung im Expander). Aufgezählt: *n* = 8, *m* = 4 und der einzelne Zyklus des Wärters: über alle 40.320 Umnummerierungen genau 307/840 (`test_claim_secret_renaming_…`); *n* = 7, *m* = 4 an fünf Anordnungen (Orakel-Test). Bei *n* = 100 gilt 31,2 % (E3) |
+| Geheime Umnummerierung der Kästen | Der Mittelwert über alle Umnummerierungen ist gleich der Gewinnchance einer zufälligen Anordnung, weil *q∘ρ* für gleichverteiltes ρ gleichverteilt ist (Begründung im Expander). Aufgezählt: *n* = 8, *m* = 4 und der einzelne Zyklus des Wärters: über alle 40.320 Umnummerierungen genau 307/840 (`test_claim_secret_renaming_…`); *n* = 7, *m* = 4 an fünf Anordnungen (`tests/test_oracle_gefangene_kaesten.py`). Bei *n* = 100 gilt 31,2 % (E3) |
 | Helfer mit einer Vertauschung | *n* = 8, *m* = 4: in allen 40.320 Anordnungen reicht eine (auch durch Ausprobieren aller 28 Vertauschungen bestätigt); für jedes *n* von 2 bis 100 mit *m* = ⌈*n*/2⌉ ist die Gewinnchance mit einer Vertauschung 100 %, weil eine Vertauschung einen Zyklus der Länge *L* ≤ *n* in ⌈*L*/2⌉ und ⌊*L*/2⌋ teilt (`test_claim_one_swap_…`). Mit *m* = 40: 13,5 %, 73,4 %, 100 % bei 0, 1, 2 Vertauschungen; mit *m* = 25: 0,57 %, 10,4 %, 54,5 %, 100 % bei 0 bis 3 (`test_claim_helper_numbers_for_n100`). Bei ungeradem *n* = 99 und *m* = 49 reicht eine nur zu 98,99 % (`test_claim_odd_n99_…`) |
 | Kosten der Vertauschungen | Mindestzahl = Summe über die Zyklen von ⌈*L*/*m*⌉ − 1, gegen die Breitensuche über alle Vertauschungsfolgen für *n* bis 6, alle *m*, bis 3 Vertauschungen (`test_claim_swap_cost_formula_…`) |
 | Optimalität für kleine Fälle | Unter allen deterministischen, anpassungsfähigen Strategien ist das beste Team gleich der Zyklus-Strategie: *n* = 3 (*m* = 1: 1/6, *m* = 2: 2/3) und *n* = 4 (*m* = 1: 1/24, *m* = 2: 5/12), durch Aufzählung aller Entscheidungsbäume (`test_claim_best_team_…`). Größere Fälle sind nicht aufgezählt |

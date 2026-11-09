@@ -1,4 +1,4 @@
-"""JEDE Zahl der README und der festen App-Texte wird hier nachgerechnet (DEMO-PLAYBOOK §4, §11a). Zählungen statt Urteilswörter, Voraussetzungen im Namen des Tests."""
+"""Die Zahlen der README und der festen App-Texte werden hier nachgerechnet (DEMO-PLAYBOOK §4, §11a), soweit die README nicht auf Orakel- oder Eigenschaftstests verweist. Zählungen statt Urteilswörter, Voraussetzungen im Namen des Tests."""
 
 import itertools
 import math

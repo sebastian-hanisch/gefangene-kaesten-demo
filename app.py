@@ -1,7 +1,7 @@
 """Die 100 Gefangenen und die Kästen - interaktive Konzept-Demo
 Sebastian Hanisch - Operations Research und Machine Learning
 
-Stück der Reihe „Teamrätsel“: ein Team mit gemeinsamem Ziel, einer vorab abgesprochenen Strategie und beschränkter Information. Hier die Aufgabe der 100 Gefangenen, die in Kästen nach ihrer
+Ein Teamrätsel: ein Team mit gemeinsamem Ziel, einer vorab abgesprochenen Strategie und beschränkter Information. Hier die Aufgabe der 100 Gefangenen, die in Kästen nach ihrer
 eigenen Nummer suchen: mit der Zyklus-Strategie gewinnt das Team mit rund 31 %, obwohl jeder Einzelne nur eine Chance von 50 % hat.
 
 Lauffähig mit: streamlit run app.py
@@ -94,7 +94,7 @@ with st.container(key="kopf"):
     st.title("🗝️ Die 100 Gefangenen und die Kästen")
 st.markdown(
     """
-**Erstes Stück der Reihe „Teamrätsel“.** Ein Team hat ein gemeinsames Ziel, darf vorher eine Strategie absprechen und handelt dann ohne Verständigung. Hier: **100 Gefangene** suchen in **100 Kästen**
+**Ein Teamrätsel.** Ein Team hat ein gemeinsames Ziel, darf vorher eine Strategie absprechen und handelt dann ohne Verständigung. Hier: **100 Gefangene** suchen in **100 Kästen**
 je den Zettel mit ihrer eigenen Nummer; jeder darf höchstens **50 Kästen** öffnen, alle zusammen gewinnen nur, wenn **jeder** seinen Zettel findet. Wer rät, hat als Team nur die Chance
 0,5 hoch 100 (7,9·10⁻³¹). Wer nach der **Zyklus-Strategie** sucht, gewinnt mit rund **31 %**, und jeder Einzelne hat dabei trotzdem nur die Chance **50 %**: **die Chancen sind gleich, nur die Erfolge sind gekoppelt.**
 
@@ -299,7 +299,7 @@ st.markdown(
 | **Die Zettel liegen gleichverteilt** (alle Anordnungen gleich wahrscheinlich) | Bei einem Wärter, der die Strategie kennt, scheitert die Zyklus-Strategie für m < n ohne Helfer sicher (E3). Eine geheime gemeinsame Umnummerierung stellt die Gleichverteilung her: das Team braucht dafür vorab einen gemeinsamen Zufall. | – |
 | **Eine Strategie wird vorab festgelegt, danach keine Verständigung** | Dürften die Gefangenen nach dem ersten Öffnen etwas mitteilen, wäre das ein anderes Rätsel (hier nicht gerechnet). | – |
 | **Alle haben dasselbe m** | Für ungleiche Zahlen erlaubter Kästen ist hier nichts gerechnet und die Optimalität der Zyklus-Strategie nicht untersucht. | – |
-| **Optimalität** | Dass keine Strategie die Zyklus-Strategie übertrifft, ist ein Literaturresultat (Curtin und Warshauer, Quellenangabe in der README) und hier nicht bewiesen. Die Demo prüft das nur durch Aufzählung aller Strategien in den Tests, für n = 3 und n = 4 mit höchstens 2 Kästen je Person. | – |
+| **Optimalität** | Dass keine Strategie die Zyklus-Strategie übertrifft, wird laut Sekundärquellen in der Literatur bewiesen (Curtin und Warshauer; deren Volltext wurde nicht gelesen, Quellenangabe in der README) und ist hier weder bewiesen noch übernommen. Die Demo prüft das nur durch Aufzählung aller Strategien in den Tests, für n = 3 und n = 4 mit höchstens 2 Kästen je Person. | – |
 | **Der Helfer sieht alle Zettel** | Er greift nur ein, wenn die erlaubten Vertauschungen für ein Gelingen aller reichen; andernfalls bleibt die Anordnung, wie sie ist. Seine Wirkung ist nur für die Zyklus-Strategie gerechnet (bei Zufall wäre er wirkungslos, bei festen Kästen nicht). | – |
 | **Feste Kästen sind ein Beispiel** | Gemeint sind die Fenster „Kasten i bis i + m − 1“; andere feste Zuordnungen haben andere Zahlen (die Anzahl passender Anordnungen ist stets der Permanent der Zuordnungsmatrix). Exakt nur bis n = 20. | – |
 | **Menschen und Gefängnisse** | Die Aufgabe ist ein Gedankenspiel; die Demo sagt nichts über Menschen, Gedächtnis oder Aufsicht. | – |

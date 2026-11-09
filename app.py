@@ -106,6 +106,19 @@ Weiter unten: vier Tabs mit je einem **🔬 Experiment**, **🚧 Wo die Annahmen
 """
 )
 
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/gefangene-kaesten-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Ein Team von Gefangenen soll gemeinsam gewinnen: Jeder sucht in den Kästen den Zettel mit seiner eigenen Nummer, und alle zusammen gewinnen nur, wenn **jeder** ihn findet. Wer rät, hat als Team praktisch keine Chance. Die **Zyklus-Strategie** (zuerst den Kasten mit der eigenen Nummer öffnen, dann dem Zettel darin folgen) lässt das Team mit einer weit höheren Chance gewinnen, obwohl jeder Einzelne dabei nicht besser abschneidet als beim Raten. Der Grund: Die Erfolge sind **gekoppelt**. Wer auf derselben Kette von Zetteln liegt, gewinnt oder verliert gemeinsam.
+
+Die Annahmen tragen alles: Ein Wärter, der den Plan kennt, lässt ihn sicher scheitern, und ohne Helfer hilft erst ein geheimer gemeinsamer Zufall des Teams dagegen. Alles ist eine Rechenaufgabe, keine Aussage über Menschen.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/gefangene-kaesten-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
+
 with st.expander("So funktioniert die Zyklus-Strategie", expanded=True):
     st.markdown(
         """
@@ -308,11 +321,10 @@ st.markdown(
 
 st.markdown("---")
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/gefangene-kaesten-erklaert.json, nicht von Hand ändern)
     st.markdown(
         r"""
-**Lesehilfe.** Gegeben sind $n$ Gefangene und $n$ Kästen, in denen die Zettel $1, \dots, n$ in einer gleichverteilten Anordnung $q$ liegen; jeder Gefangene darf $m$ Kästen öffnen.
-Gesucht ist die Wahrscheinlichkeit, dass **alle** ihren Zettel finden. Alles hier ist eigene Rechnung, durch Aufzählung aller Anordnungen bis $n = 9$ und durch zweite Rechenwege gestützt;
-der Beweis der Optimalität ist Literatur (README).
+**Lesehilfe.** Gegeben sind $n$ Gefangene und $n$ Kästen, in denen die Zettel $1, \dots, n$ in einer gleichverteilten Anordnung $q$ liegen; jeder Gefangene darf $m$ Kästen öffnen. Gesucht ist die Wahrscheinlichkeit, dass **alle** ihren Zettel finden. Alle Zahlen und Formeln hier sind eigene Rechnung, durch Aufzählung aller Anordnungen bis $n = 9$ und durch zweite Rechenwege gestützt; ein Beweis der Optimalität der Zyklus-Strategie gehört nicht zur Demo (README, Abschnitt Quellen).
 
 | Symbol | Bedeutung |
 |---|---|
@@ -322,6 +334,12 @@ der Beweis der Optimalität ist Literatur (README).
 | $\rho$ | geheime Umnummerierung der Kästen (nur im dritten Fall) |
 | $c(q)$ | Vertauschungen, die ein Helfer braucht, damit kein Zyklus länger als $m$ ist |
 
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/gefangene-kaesten-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
+    st.markdown(
+        r"""
 **Zyklus-Strategie.** Gefangener $i$ öffnet Kasten $i$, dann Kasten $q(i)$, dann $q(q(i))$, usw. Der Zettel $i$ liegt in dem Kasten, der im Zyklus vor $i$ steht, also nach $\ell_i$ Öffnungen:
 
 $$\text{Gefangener } i \text{ hat Erfolg} \iff \ell_i \le m$$
@@ -376,5 +394,5 @@ st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
     "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
-    "Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html)."
+    "Mehr zur Reihe: [Teamrätsel: Strategie ohne Verständigung](https://sebastianhanisch.net/konzepte-teamraetsel.html)."
 )

@@ -1,6 +1,6 @@
 """Exakte Wahrscheinlichkeiten für zufällige Anordnungen (numpy/Standardbibliothek; mit `exact=True` in Brüchen, für die Tests).
 
-Tragende Tatsache (Rekursion über den Zyklus des ersten Elements): In einer gleichverteilten Anordnung von N Kästen hat der Zyklus des ersten Kastens jede Länge
+Entscheidende Tatsache (Rekursion über den Zyklus des ersten Elements): In einer gleichverteilten Anordnung von N Kästen hat der Zyklus des ersten Kastens jede Länge
 k = 1, ..., N mit Wahrscheinlichkeit 1/N, und die übrigen N - k Kästen sind wieder gleichverteilt angeordnet. Jede Größe, die sich über die Zyklen addiert
 (Zahl der Gefangenen in kurzen Zyklen, Kosten der Vertauschungen), folgt daraus durch eine Rekursion über N."""
 

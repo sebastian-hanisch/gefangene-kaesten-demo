@@ -112,7 +112,7 @@ with st.expander("💬 In einfachen Worten"):
         """
 Ein Team von Gefangenen soll gemeinsam gewinnen: Jeder sucht in den Kästen den Zettel mit seiner eigenen Nummer, und alle zusammen gewinnen nur, wenn **jeder** ihn findet. Wer rät, hat als Team praktisch keine Chance. Die **Zyklus-Strategie** (zuerst den Kasten mit der eigenen Nummer öffnen, dann dem Zettel darin folgen) lässt das Team mit einer weit höheren Chance gewinnen, obwohl jeder Einzelne dabei nicht besser abschneidet als beim Raten. Der Grund: Die Erfolge sind **gekoppelt**. Wer auf derselben Kette von Zetteln liegt, gewinnt oder verliert gemeinsam.
 
-Die Annahmen tragen alles: Ein Wärter, der den Plan kennt, lässt ihn sicher scheitern, und ohne Helfer hilft erst ein geheimer gemeinsamer Zufall des Teams dagegen. Alles ist eine Rechenaufgabe, keine Aussage über Menschen.
+Alles hängt an den Annahmen: Ein Wärter, der den Plan kennt, lässt ihn sicher scheitern, und ohne Helfer hilft erst ein geheimer gemeinsamer Zufall des Teams dagegen. Alles ist eine Rechenaufgabe, keine Aussage über Menschen.
 
 [Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/gefangene-kaesten-erklaert.html)
         """
@@ -125,7 +125,7 @@ with st.expander("So funktioniert die Zyklus-Strategie", expanded=True):
 1. **Die Regeln.** In den Kästen 1 bis n liegen die Zettel 1 bis n, jeder genau einmal, in zufälliger Anordnung. Gefangener *i* sucht den Zettel *i*. Er öffnet höchstens *m* Kästen, danach ist er fertig.
    Verständigen dürfen sich die Gefangenen nur vorab, danach nicht mehr.
 2. **Die Regel der Strategie.** Gefangener *i* öffnet zuerst **Kasten *i*** (seine eigene Nummer). Liegt dort der Zettel *j*, öffnet er als Nächstes **Kasten *j***, usw.
-3. **Warum das trägt.** Folgt man den Zetteln von Kasten zu Kasten, läuft man im Kreis (ein **Zyklus** der Anordnung). Der Zettel *i* liegt im Kasten **vor** Kasten *i* im Zyklus, also nach genau
+3. **Warum das gilt.** Folgt man den Zetteln von Kasten zu Kasten, läuft man im Kreis (ein **Zyklus** der Anordnung). Der Zettel *i* liegt im Kasten **vor** Kasten *i* im Zyklus, also nach genau
    so vielen Öffnungen, wie der Zyklus Kästen hat. **Gefangener *i* hat Erfolg genau dann, wenn sein Zyklus höchstens *m* Kästen lang ist.**
 4. **Das Team gewinnt, wenn kein Zyklus länger als *m* ist.** Bei *m* ≥ *n*/2 kann es höchstens einen langen Zyklus geben; die Chance zu gewinnen ist dann 1 − (1/(m+1) + … + 1/n), bei 100 Gefangenen und
    *m* = 50 gleich 31,2 %. Mit *m* = *n*/2 sinkt sie bei wachsender Gefangenenzahl auf den Grenzwert 1 − ln 2 = 30,7 %.
